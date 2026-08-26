@@ -9,7 +9,7 @@
   
   **Submission for ITECHNO CUP 2026 - Web Development**
   
-  **By [Kelas Juara]**
+  **By Kelas Juara**
   
 </div>
 
@@ -35,11 +35,9 @@
 
 | Nama | Peran | GitHub |
 |------|-------|--------|
-| **[Nama Lengkap 1]** | Project Lead & Full Stack Developer | [GitHub](https://github.com/[username1]) |
-| **[Nama Lengkap 2]** | Frontend Developer | [GitHub](https://github.com/[username2]) |
-| **[Nama Lengkap 3]** | Backend Developer | [GitHub](https://github.com/[username3]) |
-| **[Nama Lengkap 4]** | UI/UX Designer | [GitHub](https://github.com/[username4]) |
-| **[Nama Lengkap 4]** | UI/UX Designer | [@username4](https://github.com/[username4]) |
+| **Muhamad Jundi Al Hafidz** | Project Lead & Full Stack Developer | [GitHub](https://github.com/nuuvy7) |
+| **Fauzunnajah Attamam** | Full Stack Developer | [GitHub](https://github.com/chfjuna76-sudo) |
+| **Zariel Waleed Hidayat** | UI/UX Designer & Frontend Developer | [GitHub](https://github.com/zarielwh04-cyber) |
 
 ---
 
