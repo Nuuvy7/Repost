@@ -35,9 +35,9 @@
 
 | Nama | Peran | GitHub |
 |------|-------|--------|
-| **Muhamad Jundi Al Hafidz** | Project Lead & Full Stack Developer | [GitHub](https://github.com/nuuvy7) |
-| **Fauzunnajah Attamam** | Full Stack Developer | [GitHub](https://github.com/chfjuna76-sudo) |
-| **Zariel Waleed Hidayat** | UI/UX Designer & Frontend Developer | [GitHub](https://github.com/zarielwh04-cyber) |
+| **Muhamad Jundi Al Hafidz** | Project Lead & Full Stack Developer | [nuuvy7](https://github.com/nuuvy7) |
+| **Fauzunnajah Attamam** | Full Stack Developer | [chfjuna76-sudo](https://github.com/chfjuna76-sudo) |
+| **Zariel Waleed Hidayat** | UI/UX Designer & Frontend Developer | [zarielwh04-cyber](https://github.com/zarielwh04-cyber) |
 
 ---
 
