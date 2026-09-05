@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-repost-green: #005139;
+  --color-repost-green-light: #89f87f;
+  --color-repost-blue: #5aa9e6;
+  --color-repost-blue-light: #7fc8f8;
+  --color-repost-red: #ba1a1a;
+  --color-repost-yellow: #ffe45e;
+  --color-repost-bg: #f7faf5;
+  --color-repost-sidebar: #ebefea;
+  --color-repost-card: #ffffff;
+  --color-repost-button-inactive: #f5f5f5;
+  --color-repost-text: #393030;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --font-serif: 'Hedvig Letters Serif', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --background: 100 20% 97%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --primary: 155 100% 16%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 100 20% 95%;
+  --secondary-foreground: 155 100% 16%;
+  --muted: 100 15% 95%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 100 15% 95%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 150 10% 90%;
+  --input: 150 10% 90%;
+  --ring: 155 100% 16%;
+  --radius: 0.5rem;
+  --sidebar: 110 12% 94%;
+  --sidebar-foreground: 222.2 84% 4.9%;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: #f7faf5;
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: 'Hedvig Letters Serif', Georgia, serif;
+}
+
+.font-heading {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
