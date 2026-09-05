@@ -45,17 +45,17 @@
 
 ### Latar Belakang
 
-[Sebagai kota metropolitan dengan tingkat mobilitas yang sangat tinggi, Jakarta menghadapi tantangan konstan terkait pemeliharaan fasilitas publik. Setiap harinya, warga kerap menemukan kerusakan infrastruktur seperti jalan berlubang, lampu jalan yang padam, hingga fasilitas umum yang terbengkalai. Namun, banyak warga yang enggan melapor karena sistem pengaduan konvensional sering kali terasa rumit, tertutup, dan kurang transparan mengenai status tindak lanjutnya. Warga membutuhkan sebuah ruang di mana laporan mereka tidak hanya sekadar masuk ke dalam sistem basis data, tetapi juga bisa dilihat, didukung, dan diawasi bersama oleh masyarakat luas agar penanganannya lebih cepat.]
+[Di kota-kota besar seperti Jakarta, masyarakat sering kali kesulitan untuk melaporkan masalah lingkungan, infrastruktur, atau keamanan secara efektif. Platform pelaporan yang ada bersifat vertikal (top-down) dan tidak memiliki elemen sosial yang mendorong partisipasi aktif warga. Berdasarkan data BPS 2024, tingkat partisipasi warga dalam pelaporan masalah kota masih di bawah 30%.]
 
 ### Solusi yang Ditawarkan
 
-[Repost (Report and Post) hadir sebagai solusi inovatif yang mendefinisikan ulang cara warga berpartisipasi dalam merawat kota. Dengan mengadaptasi antarmuka dan pengalaman pengguna (user experience) ala media sosial, Repost menyajikan ekosistem pelaporan publik yang interaktif. Warga dapat memposting foto dan detail kerusakan lingkungan sekitar di sebuah lini masa (feed) publik. Sistem ini bersifat crowdsourced di mana pengguna lain dapat memberikan interaksi (dukungan/validasi) pada laporan tersebut, sehingga isu yang paling mendesak bisa mendapatkan visibilitas tinggi dan memicu respons yang lebih cepat dari pihak berwenang maupun komunitas peduli kota.]
+[REPOST menghadirkan pendekatan baru dengan menggabungkan konsep *social media* dan *crowd-reporting* dalam satu platform. Warga dapat membuat postingan laporan dengan lampiran foto, menandai lokasi kejadian di peta interaktif, dan berinteraksi dengan sesama warga melalui like, comment, dan repost — mirip dengan mekanisme viral di media sosial. Semakin banyak repost, semakin tinggi visibilitas laporan tersebut.]
 
 ### Tujuan Proyek
 
-- 🎯 **Tujuan Utama**: [Memfasilitasi warga Jakarta dengan platform pelaporan infrastruktur yang transparan, responsif, dan interaktif guna mempercepat proses perbaikan fasilitas umum.]
-- 📊 **Target Pengguna**: [Warga domisili dan komuter harian di DKI Jakarta yang aktif, peduli terhadap lingkungan sekitar, serta instansi atau komunitas yang membutuhkan pemetaan masalah kota secara real-time.]
-- 💡 **Value Proposition**: [Mengubah pengalaman pengaduan yang pasif menjadi aktivitas sosial yang berdaya. Repost menjadikan setiap laporan bersifat publik, membangun dorongan sosial positif (positive social pressure) untuk transparansi perbaikan, dan mudah digunakan layaknya menggulir media sosial sehari-hari.]
+- 🎯 **Tujuan Utama**: [Membangun platform pelaporan warga yang terintegrasi, interaktif, dan mendorong partisipasi aktif masyarakat]
+- 📊 **Target Pengguna**: [Warga kota, komunitas lokal, dan pemerintah daerah]
+- 💡 **Value Proposition**: [Mekanisme repost & trending membuat laporan populer lebih cepat terlihat, fitur lokasi peta membantu identifikasi masalah secara geografis, dan sistem reputasi mendorong kontribusi berkelanjutan]
 
 ---
 
@@ -64,43 +64,61 @@
 ### Fitur Utama
 
 | Fitur | Deskripsi | Keunggulan |
-|----------|--------------|---------------|
-| **[Nama Fitur 1]** | [Deskripsi singkat fitur] | [Mengapa fitur ini penting/unik] |
-| **[Nama Fitur 2]** | [Deskripsi singkat fitur] | [Mengapa fitur ini penting/unik] |
-| **[Nama Fitur 3]** | [Deskripsi singkat fitur] | [Mengapa fitur ini penting/unik] |
-| **[Nama Fitur 4]** | [Deskripsi singkat fitur] | [Mengapa fitur ini penting/unik] |
+|-------|-----------|------------|
+| *Posting Laporan* | Buat laporan dengan judul, deskripsi, foto, dan lokasi | Lampiran foto langsung di-upload, lokasi ditandai di peta interaktif |
+| *Like & Repost* | Tandai laporan yang penting dan sebarkan ke followers | Mekanisme repost membuat laporan viral, meningkatkan visibilitas masalah |
+| *Komentar* | Diskusi dan beri informasi tambahan pada laporan | Membangun konteks kolaboratif di setiap laporan |
+| *Sistem Flair* | Filter laporan berdasarkan wilayah Jakarta (Jaksel, Jakpus, dll) | Memudahkan warga menemukan laporan di area mereka |
+| *Peta Lokasi* | Peta interaktif menggunakan OpenStreetMap/Leaflet | Visualisasi lokasi laporan secara geografis tanpa API key |
+| *Trending & News* | Laporan dengan repost terbanyak muncul di sidebar | Laporan prioritas otomatis naik ke permukaan |
+| *Profile & Reputasi* | Profil pengguna dengan statistik, chart, dan sistem reputasi | Mendorong konsistensi kontribusi warga |
+| *Notifikasi Real-time* | Polling notifikasi setiap detik untuk like, repost, follow, komentar | Pengguna selalu mendapat update terbaru |
 
 ### Fitur Tambahan
 
-- **[Fitur A]** - [Penjelasan singkat]
-- **[Fitur B]** - [Penjelasan singkat]
-- **[Fitur C]** - [Penjelasan singkat]
-- **[Fitur D]** - [Penjelasan singkat]
+- [*Avatar Crop*] — [Upload dan crop avatar dengan react-avatar-editor (zoom, rotate, preview)]
+- [*Image Lightbox*] — [Klik foto untuk melihat dalam ukuran penuh]
+- [*People You May Know*] — [Rekomendasi follow berdasarkan mutual followers]
+- [*Search Unified*] — [Cari pengguna dan postingan dalam satu kolom pencarian]
+- [*Help & Support*] — [Form kontak yang terhubung ke email admin]
+- [*Mobile Responsive*] — [Layout horizontal scroll di mobile, FAB button untuk posting]
+- [*Session Storage*] — [Sesi per-tab independen, multi-tab login tanpa konflik]
+- [*Lava Lamp Background*] — [Efek visual animasi di berbagai halaman]
 
 ---
+
 
 ## 📸 Demo & Screenshot
 
 ### Live Demo
 
-🔗 **[Kunjungi Website](https://[URL_DEMO])**
+🔗 *[Kunjungi Website](#)* (placeholder)
 
 ### Screenshot Aplikasi
 
 <div align="center">
-  <img src="[URL_SCREENSHOT_1]" alt="Homepage" width="800"/>
-  <p><em>Homepage - Tampilan utama aplikasi</em></p>
-  
-  <img src="[URL_SCREENSHOT_2]" alt="Dashboard" width="800"/>
-  <p><em>Dashboard - Panel kontrol pengguna</em></p>
-  
-  <img src="[URL_SCREENSHOT_3]" alt="Feature" width="800"/>
-  <p><em>[Nama Fitur] - [Deskripsi screenshot]</em></p>
+
+*Login Page* — Glassmorphism card dengan image slider
+
+<img src="" alt="Login" width="800"/>
+
+*Home Feed* — Postingan dengan flair filter, trending sidebar, people you may know
+
+<img src="" alt="Home" width="800"/>
+
+*Profile Page* — 2-column layout dengan avatar crop, reputation chart, followers modal
+
+<img src="" alt="Profile" width="800"/>
+
+*Create Post* — Form dengan image upload, location map picker
+
+<img src="" alt="Create Post" width="800"/>
+
+*Notifications* — Notifikasi real-time dengan avatar dan icon
+
+<img src="" alt="Notifications" width="800"/>
+
 </div>
-
-### Video Demo
-
-📹 **[Link Video Demo](https://[URL_VIDEO])** _(opsional)_
 
 ---
 
@@ -110,36 +128,46 @@
 
 #### Frontend
 ```
-Framework    : [React]
-UI Library   : [Tailwind CSS / Material-UI / Chakra UI / dll]
-State Mgmt   : [Redux / Zustand / Context API / dll]
-Validation   : [Zod / Yup / React Hook Form / dll]
+Framework    : React 19
+Build Tool   : Vite 8
+Styling      : Tailwind CSS v4 + shadcn/ui
+Animation    : GSAP 3.15
+Maps         : Leaflet + react-leaflet (OpenStreetMap)
+HTTP Client  : Axios
+Routing      : React Router DOM v7
+Icons        : Lucide React
+Image Crop   : react-avatar-editor
 ```
 
 #### Backend
 ```
-Runtime      : [Node.js]
-Framework    : [Laravel]
-Database     : [MySQL]
-ORM          : [Prisma / Drizzle / TypeORM / dll]
-Auth         : [JWT / NextAuth / Clerk / dll]
+Runtime      : PHP 8.4
+Framework    : Laravel 11
+Auth         : Laravel Sanctum (Token-based)
+Database     : MySQL (repost_db)
+Storage      : Laravel Storage (public disk)
+Email        : Laravel Mail (Gmail SMTP)
 ```
 
 #### DevOps & Tools
 ```
-Deployment   : [Vercel / Netlify / Railway / dll]
-CI/CD        : [GitHub Actions / Vercel / dll]
-Testing      : [Jest / Vitest / Playwright / dll]
-Monitoring   : [Sentry / LogRocket / dll]
+Package Mgmt : Composer (backend) + npm (frontend)
+Local Dev    : Laravel Herd
+Code Linting : OxLint (frontend) + Laravel Pint (backend)
+Testing      : PHPUnit (backend)
 ```
 
 ### Alasan Pemilihan Teknologi
 
 | Teknologi | Alasan Pemilihan |
 |-----------|------------------|
-| **[React]** | [Jelaskan mengapa memilih teknologi ini, keunggulannya untuk proyek ini] |
-| **[Laravel]** | [Jelaskan mengapa memilih teknologi ini, keunggulannya untuk proyek ini] |
-| **[Tech 3]** | [Jelaskan mengapa memilih teknologi ini, keunggulannya untuk proyek ini] |
+| *React + Vite* | Komponen reusabel, hot reload cepat, ekosistem besar |
+| *Tailwind CSS v4* | Utility-first CSS, konsisten dengan desain Figma, shadcn/ui compatible |
+| *GSAP* | Animasi performa tinggi untuk login slider, page transitions, scroll effects |
+| *Leaflet + OpenStreetMap* | Peta gratis tanpa API key, cocok untuk proyek skala kota |
+| *Laravel 11* | Framework PHP terpopuler, built-in auth, ORM kuat, struktur MVC jelas |
+| *Sanctum* | Token-based auth yang ringan, cocok untuk SPA + mobile client |
+| *MySQL* | Relasional database yang stabil, cocok untuk data laporan dan relasi user |
 
 ### Dependencies Utama
 
@@ -159,16 +187,80 @@ Monitoring   : [Sentry / LogRocket / dll]
 
 ### System Architecture
 
-```
-[Tambahkan diagram arsitektur sistem - bisa menggunakan Mermaid atau gambar]
-```
 
-### Database Schema
+┌─────────────────────────────────────────────────────┐
+│                    FRONTEND (SPA)                     │
+│  React 19 + Vite + Tailwind CSS + shadcn/ui         │
+│                                                       │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌─────────┐ │
+│  │   Auth   │ │   Post   │ │  Profile │ │  Notif  │ │
+│  │  Module  │ │  Module  │ │  Module  │ │  Module │ │
+│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬────┘ │
+│       │             │            │             │       │
+│       └─────────────┴────────────┴─────────────┘       │
+│                         │                              │
+│                    Axios (API)                          │
+└─────────────────────────┬─────────────────────────────┘
+                          │ HTTP (Bearer Token)
+┌─────────────────────────┴─────────────────────────────┐
+│                   BACKEND (API)                         │
+│           Laravel 11 + Sanctum + MySQL                  │
+│                                                         │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐  │
+│  │  Auth    │ │  Post    │ │  User    │ │ Notif    │  │
+│  │Controller│ │Controller│ │Controller│ │Controller│  │
+│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘  │
+│       │             │            │             │         │
+│  ┌────┴─────────────┴────────────┴─────────────┴────┐  │
+│  │              Eloquent ORM + MySQL                 │  │
+│  └──────────────────────────────────────────────────┘  │
+│                                                         │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │           Laravel Storage (Public Disk)           │  │
+│  │         Avatar & Post Image Storage               │  │
+│  └──────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────┘
 
-```
-[Tambahkan diagram ERD atau schema database]
-```
+#### Database Schema
 
+
+┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+│    users     │     │    posts     │     │   comments   │
+├──────────────┤     ├──────────────┤     ├──────────────┤
+│ id           │──┐  │ id           │──┐  │ id           │
+│ name         │  │  │ user_id      │──┘  │ user_id      │──┐
+│ username     │  │  │ title        │     │ post_id      │──┘
+│ email        │  │  │ body         │     │ body         │
+│ password     │  │  │ media_url    │     │ created_at   │
+│ avatar       │  │  │ media_type   │     └──────────────┘
+│ bio          │  │  │ status       │
+│ role         │  │  │ latitude     │     ┌──────────────┐
+│ reputation   │  │  │ longitude    │     │   follows    │
+│ followers_   │  │  │ location_name│     ├──────────────┤
+│   count      │  │  │ reposts_     │     │ user_id      │──┐
+└──────────────┘  │  │   count      │     │ followed_    │  │
+                  │  │ created_at   │     │   user_id    │──┘
+┌──────────────┐  │  └──────────────┘     └──────────────┘
+│    likes     │  │
+├──────────────┤  │  ┌──────────────┐     ┌──────────────┐
+│ id           │  │  │   reposts    │     │notifications │
+│ user_id      │──┘  ├──────────────┤     ├──────────────┤
+│ post_id      │─────│ user_id      │     │ id (uuid)    │
+│ created_at   │     │ post_id      │     │ type         │
+└──────────────┘     │ created_at   │     │ notifiable_  │
+                     └──────────────┘     │   type + id  │
+                                          │ data (json)  │
+                     ┌──────────────┐     │ read_at      │
+                     │support_tickets│    │ created_at   │
+                     ├──────────────┤     └──────────────┘
+                     │ id           │
+                     │ user_id      │
+                     │ name         │
+                     │ email        │
+                     │ subject      │
+                     │ message      │
+                     │ status       │
+                     └──────────────┘
 ### Folder Structure
 
 ```
