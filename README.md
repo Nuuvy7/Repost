@@ -188,42 +188,43 @@ Testing      : PHPUnit (backend)
 ### System Architecture
 
 
+```
 ┌─────────────────────────────────────────────────────┐
-│                    FRONTEND (SPA)                     │
+│                    FRONTEND (SPA)                   │
 │  React 19 + Vite + Tailwind CSS + shadcn/ui         │
-│                                                       │
+│                                                     │
 │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌─────────┐ │
 │  │   Auth   │ │   Post   │ │  Profile │ │  Notif  │ │
 │  │  Module  │ │  Module  │ │  Module  │ │  Module │ │
 │  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬────┘ │
-│       │             │            │             │       │
-│       └─────────────┴────────────┴─────────────┘       │
-│                         │                              │
-│                    Axios (API)                          │
-└─────────────────────────┬─────────────────────────────┘
+│       │             │            │             │    │
+│       └─────────────┴────────────┴─────────────┘    │
+│                         │                           │
+│                    Axios (API)                      │
+└─────────────────────────┬───────────────────────────┘
                           │ HTTP (Bearer Token)
-┌─────────────────────────┴─────────────────────────────┐
+┌─────────────────────────┴───────────────────────────────┐
 │                   BACKEND (API)                         │
 │           Laravel 11 + Sanctum + MySQL                  │
 │                                                         │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐  │
-│  │  Auth    │ │  Post    │ │  User    │ │ Notif    │  │
-│  │Controller│ │Controller│ │Controller│ │Controller│  │
-│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘  │
-│       │             │            │             │         │
-│  ┌────┴─────────────┴────────────┴─────────────┴────┐  │
-│  │              Eloquent ORM + MySQL                 │  │
-│  └──────────────────────────────────────────────────┘  │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐    │
+│  │  Auth    │ │  Post    │ │  User    │ │ Notif    │    │
+│  │Controller│ │Controller│ │Controller│ │Controller│    │
+│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘    │
+│       │            │            │            │          │
+│  ┌────┴────────────┴────────────┴────────────┴──────┐   │
+│  │              Eloquent ORM + MySQL                │   │
+│  └──────────────────────────────────────────────────┘   │
 │                                                         │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │           Laravel Storage (Public Disk)           │  │
-│  │         Avatar & Post Image Storage               │  │
-│  └──────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │           Laravel Storage (Public Disk)          │   │
+│  │         Avatar & Post Image Storage              │   │
+│  └──────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────┘
-
+```
 #### Database Schema
 
-
+```
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
 │    users     │     │    posts     │     │   comments   │
 ├──────────────┤     ├──────────────┤     ├──────────────┤
@@ -261,21 +262,37 @@ Testing      : PHPUnit (backend)
                      │ message      │
                      │ status       │
                      └──────────────┘
+```
 ### Folder Structure
 
 ```
-project-root/
+repost-backend/                    # Laravel 11 API
+├── app/
+│   ├── Http/Controllers/Api/      # API Controllers
+│   ├── Mail/                      # Mailable classes
+│   ├── Models/                    # Eloquent models
+│   └── Notifications/             # Notification classes
+├── database/
+│   └── migrations/                # Database migrations
+├── routes/
+│   └── api.php                    # API routes
+└── resources/views/emails/        # Email templates
+
+repost-frontend/                   # React 19 + Vite
 ├── src/
-│   ├── components/     # Reusable components
-│   ├── pages/          # Page components
-│   ├── hooks/          # Custom hooks
-│   ├── utils/          # Utility functions
-│   ├── services/       # API services
-│   ├── store/          # State management
-│   └── types/          # TypeScript types
-├── public/             # Static assets
-├── tests/              # Test files
-└── docs/               # Documentation
+│   ├── api/                       # Axios API layer
+│   ├── assets/                    # Static assets & images
+│   ├── components/
+│   │   ├── auth/                  # Login/Register forms
+│   │   ├── comments/              # Comment components
+│   │   ├── effects/               # LavaLamp background
+│   │   ├── layout/                # Header, Sidebar, Layout
+│   │   ├── map/                   # MapPicker, MapDisplay
+│   │   ├── posts/                 # PostCard, PostFeed, PostForm
+│   │   └── ui/                    # shadcn/ui + custom components
+│   ├── contexts/                  # AuthContext
+│   └── pages/                     # Page components
+└── public/                        # Static files
 ```
 
 ---
