@@ -313,7 +313,6 @@ Pastikan Anda telah menginstall:
 #### 1️⃣ Clone Repository
 
 ```bash
-bash
 git clone https://github.com/nuuvy7/repost.git
 cd repost
 ```
