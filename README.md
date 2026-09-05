@@ -45,17 +45,17 @@
 
 ### Latar Belakang
 
-[Jelaskan konteks permasalahan yang ingin diselesaikan. Gunakan data atau fakta untuk memperkuat argumen. Contoh: "Berdasarkan survei X, 70% pengguna mengalami kesulitan dalam..."]
+[Sebagai kota metropolitan dengan tingkat mobilitas yang sangat tinggi, Jakarta menghadapi tantangan konstan terkait pemeliharaan fasilitas publik. Setiap harinya, warga kerap menemukan kerusakan infrastruktur seperti jalan berlubang, lampu jalan yang padam, hingga fasilitas umum yang terbengkalai. Namun, banyak warga yang enggan melapor karena sistem pengaduan konvensional sering kali terasa rumit, tertutup, dan kurang transparan mengenai status tindak lanjutnya. Warga membutuhkan sebuah ruang di mana laporan mereka tidak hanya sekadar masuk ke dalam sistem basis data, tetapi juga bisa dilihat, didukung, dan diawasi bersama oleh masyarakat luas agar penanganannya lebih cepat.]
 
 ### Solusi yang Ditawarkan
 
-[Jelaskan bagaimana aplikasi ini menyelesaikan masalah tersebut dengan pendekatan yang unik atau inovatif]
+[Repost (Report and Post) hadir sebagai solusi inovatif yang mendefinisikan ulang cara warga berpartisipasi dalam merawat kota. Dengan mengadaptasi antarmuka dan pengalaman pengguna (user experience) ala media sosial, Repost menyajikan ekosistem pelaporan publik yang interaktif. Warga dapat memposting foto dan detail kerusakan lingkungan sekitar di sebuah lini masa (feed) publik. Sistem ini bersifat crowdsourced di mana pengguna lain dapat memberikan interaksi (dukungan/validasi) pada laporan tersebut, sehingga isu yang paling mendesak bisa mendapatkan visibilitas tinggi dan memicu respons yang lebih cepat dari pihak berwenang maupun komunitas peduli kota.]
 
 ### Tujuan Proyek
 
-- 🎯 **Tujuan Utama**: [Tujuan primer aplikasi]
-- 📊 **Target Pengguna**: [Siapa yang akan menggunakan aplikasi ini]
-- 💡 **Value Proposition**: [Apa yang membuat aplikasi ini berbeda dari solusi lain]
+- 🎯 **Tujuan Utama**: [Memfasilitasi warga Jakarta dengan platform pelaporan infrastruktur yang transparan, responsif, dan interaktif guna mempercepat proses perbaikan fasilitas umum.]
+- 📊 **Target Pengguna**: [Warga domisili dan komuter harian di DKI Jakarta yang aktif, peduli terhadap lingkungan sekitar, serta instansi atau komunitas yang membutuhkan pemetaan masalah kota secara real-time.]
+- 💡 **Value Proposition**: [Mengubah pengalaman pengaduan yang pasif menjadi aktivitas sosial yang berdaya. Repost menjadikan setiap laporan bersifat publik, membangun dorongan sosial positif (positive social pressure) untuk transparansi perbaikan, dan mudah digunakan layaknya menggulir media sosial sehari-hari.]
 
 ---
 
@@ -110,7 +110,7 @@
 
 #### Frontend
 ```
-Framework    : [React / Next.js / Vue / dll]
+Framework    : [React]
 UI Library   : [Tailwind CSS / Material-UI / Chakra UI / dll]
 State Mgmt   : [Redux / Zustand / Context API / dll]
 Validation   : [Zod / Yup / React Hook Form / dll]
@@ -118,9 +118,9 @@ Validation   : [Zod / Yup / React Hook Form / dll]
 
 #### Backend
 ```
-Runtime      : [Node.js / Bun / Deno / dll]
-Framework    : [Express / Fastify / Hono / dll]
-Database     : [PostgreSQL / MongoDB / MySQL / dll]
+Runtime      : [Node.js]
+Framework    : [Laravel]
+Database     : [MySQL]
 ORM          : [Prisma / Drizzle / TypeORM / dll]
 Auth         : [JWT / NextAuth / Clerk / dll]
 ```
@@ -137,8 +137,8 @@ Monitoring   : [Sentry / LogRocket / dll]
 
 | Teknologi | Alasan Pemilihan |
 |-----------|------------------|
-| **[Tech 1]** | [Jelaskan mengapa memilih teknologi ini, keunggulannya untuk proyek ini] |
-| **[Tech 2]** | [Jelaskan mengapa memilih teknologi ini, keunggulannya untuk proyek ini] |
+| **[React]** | [Jelaskan mengapa memilih teknologi ini, keunggulannya untuk proyek ini] |
+| **[Laravel]** | [Jelaskan mengapa memilih teknologi ini, keunggulannya untuk proyek ini] |
 | **[Tech 3]** | [Jelaskan mengapa memilih teknologi ini, keunggulannya untuk proyek ini] |
 
 ### Dependencies Utama
