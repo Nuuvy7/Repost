@@ -466,11 +466,12 @@ Development: http://localhost:8000/api
 
 ### Authentication
 
-Semua endpoint yang dilindungi memerlukan header:
+```Semua endpoint yang dilindungi memerlukan header:
 
 Authorization: Bearer {token}
 Content-Type: application/json
 Accept: application/json
+```
 
 ### Endpoints
 
