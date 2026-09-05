@@ -476,18 +476,18 @@ Accept: application/json
 
 #### Auth
 
-http
+```http
 POST   /api/auth/register        # Register akun baru
 POST   /api/auth/login           # Login
 POST   /api/auth/logout          # Logout (protected)
 GET    /api/auth/me              # Get current user (protected)
 POST   /api/auth/forgot-password # Kirim link reset password
 POST   /api/auth/reset-password  # Reset password
-
+```
 
 #### Posts
 
-http
+```http
 GET    /api/posts                # Get all posts (with pagination, filter)
 GET    /api/posts/trending       # Get trending posts (reposts terbanyak)
 GET    /api/posts/:id            # Get single post
@@ -500,11 +500,11 @@ DELETE /api/posts/:id/like       # Unlike post (protected)
 GET    /api/posts/:id/comments   # Get comments for post
 POST   /api/posts/:id/comments   # Add comment (protected)
 DELETE /api/posts/:id/comments/:id  # Delete comment (protected, owner only)
-
+```
 
 #### Users
 
-http
+```http
 GET    /api/users/search?q=query # Search users & posts
 GET    /api/users/:id            # Get user profile
 PUT    /api/users/profile        # Update profile (protected)
@@ -514,26 +514,26 @@ GET    /api/users/:id/stats       # Get user stats (posts/reposts per week)
 POST   /api/users/:id/follow      # Toggle follow (protected)
 GET    /api/users/:id/followers   # Get followers list
 GET    /api/users/:id/following   # Get following list
-
+```
 
 #### Notifications
 
-http
+```http
 GET    /api/notifications              # Get all notifications (protected)
 GET    /api/notifications/unread-count  # Get unread count (protected)
 POST   /api/notifications/read-all      # Mark all as read (protected)
 POST   /api/notifications/:id/read      # Mark one as read (protected)
-
+```
 
 #### Upload & Support
 
-http
+```http
 POST   /api/upload             # Upload image file (protected)
 POST   /api/support            # Send support ticket (public)
-
+```
 ### Example Request
 
-javascript
+```javascript
 // Login
 const res = await fetch('http://localhost:8000/api/auth/login', {
   method: 'POST',
@@ -566,6 +566,7 @@ const postRes = await fetch('http://localhost:8000/api/posts', {
     location_name: 'Jakarta Selatan'
   })
 });
+```
 ---
 
 ## 📄 Lisensi
