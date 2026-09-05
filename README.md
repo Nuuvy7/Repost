@@ -314,7 +314,7 @@ Pastikan Anda telah menginstall:
 
 ```bash
 bash
-git clone https://github.com/[username]/repost.git
+git clone https://github.com/nuuvy7/repost.git
 cd repost
 ```
 
