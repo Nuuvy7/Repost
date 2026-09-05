@@ -302,70 +302,100 @@ repost-frontend/                   # React 19 + Vite
 ### Prerequisites
 
 Pastikan Anda telah menginstall:
-- **Node.js** (v18.x atau lebih tinggi)
-- **npm** / **yarn** / **pnpm**
-- **[Database]** (jika diperlukan)
-- **Git**
+- *PHP* ≥ 8.3 (via Laravel Herd / XAMPP / native)
+- *Node.js* ≥ 18.x
+- *MySQL* ≥ 8.0
+- *Composer* ≥ 2.x
+- *Git*
 
 ### Langkah Instalasi
 
 #### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/[username]/[repo-name].git
-cd [repo-name]
+bash
+git clone https://github.com/[username]/repost.git
+cd repost
 ```
 
-#### 2️⃣ Install Dependencies
+#### 2️⃣ Setup Backend
 
 ```bash
-# Menggunakan npm
-npm install
+cd repost-backend
 
-# Atau menggunakan yarn
-yarn install
+# Install dependencies PHP
+composer install
 
-# Atau menggunakan pnpm
-pnpm install
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
 ```
 
-#### 3️⃣ Setup Environment Variables
+#### 3️⃣ Konfigurasi .env
 
 Buat file `.env` di root directory:
 
 ```env
-# Database
-DATABASE_URL="[connection_string]"
+env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=repost_db
+DB_USERNAME=root
+DB_PASSWORD=
 
-# Authentication
-JWT_SECRET="[your_jwt_secret]"
-NEXTAUTH_SECRET="[your_nextauth_secret]"
-
-# API Keys
-API_KEY="[your_api_key]"
-
-# Other configs
-NODE_ENV="development"
-PORT=3000
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-app-password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=your-email@gmail.com
+MAIL_FROM_NAME=REPOST
 ```
 
 #### 4️⃣ Setup Database
 
 ```bash
-# Jalankan migrasi database
-npm run db:migrate
+## Buat database (jika belum ada)
+mysql -u root -e "CREATE DATABASE repost_db"
+
+# Jalankan migrasi
+php artisan migrate --force
 
 # Seed data (opsional)
-npm run db:seed
+php artisan db:seed
 ```
-
-#### 5️⃣ Run Development Server
+#### 5️⃣ Setup Storage
 
 ```bash
+# Buat symlink untuk storage public
+php artisan storage:link
+```
+#### 6️⃣ Setup Frontend
+```bash
+cd ../repost-frontend
+
+# Install dependencies Node
+npm install
+```
+
+#### 7️⃣ Jalankan Development Server
+```bash
+# Terminal 1 — Backend
+cd repost-backend
+php artisan serve
+
+# Terminal 2 — Frontend
+cd repost-frontend
 npm run dev
 ```
 
-Aplikasi akan berjalan di `http://localhost:3000`
+Aplikasi akan berjalan di:
+- *Frontend*: http://localhost:5173
+- *Backend API*: http://localhost:8000/api
 
 ---
 
@@ -374,33 +404,57 @@ Aplikasi akan berjalan di `http://localhost:3000`
 ### Menjalankan Aplikasi
 
 ```bash
-# Development mode
-npm run dev
+# Frontend
+npm run dev       # Development mode
+npm run build     # Production build
+npm run preview   # Preview build
 
-# Production build
-npm run build
-npm run start
-
-# Run tests
-npm run test
-
-# Linting
-npm run lint
+# Backend
+php artisan serve          # Development server
+php artisan migrate        # Run migrations
+php artisan test           # Run tests
+php artisan notification:table  # Setup notifications table
 ```
 
-### User Guide
+#### User Guide
 
-#### Untuk Pengguna Umum
+#### Register & Login
 
-1. **Registrasi/Login**: [Jelaskan cara mendaftar atau login]
-2. **[Fitur 1]**: [Jelaskan cara menggunakan fitur ini]
-3. **[Fitur 2]**: [Jelaskan cara menggunakan fitur ini]
+1. Buka halaman /register
+2. Masukkan *Username, **Email, dan **Password*
+3. Setelah register, Anda akan otomatis login dan diarahkan ke Home
+4. Login kembali dapat dilakukan dari halaman /login
 
-#### Untuk Admin
+#### Membuat Postingan
 
-1. **Akses Admin Panel**: [Jelaskan cara mengakses]
-2. **[Fungsi Admin 1]**: [Jelaskan cara menggunakan]
-3. **[Fungsi Admin 2]**: [Jelaskan cara menggunakan]
+1. Klik tombol *"BUAT POSTINGAN"* (FAB di mobile) atau *"Post"* di sidebar
+2. Isi judul, konten, dan lampirkan foto (opsional)
+3. Tandai lokasi kejadian menggunakan peta interaktif
+4. Klik *"Create Post"*
+
+#### Berinteraksi dengan Postingan
+
+- *Like* — Klik ikon hati untuk menyukai postingan
+- *Comment* — Klik ikon komentar untuk membuka atau menulis komentar
+- *Repost* — Klik ikon repost untuk menyebarkan postingan ke followers Anda
+
+#### Mengikuti Pengguna
+
+1. Buka profil pengguna yang ingin di-follow
+2. Klik tombol *"Follow"*
+3. Pengguna akan menerima notifikasi
+
+#### Melihat Notifikasi
+
+1. Klik ikon lonceng di header
+2. Dropdown notifikasi muncul dengan update terbaru
+3. Klik *"Lihat Semua Notifikasi"* untuk halaman notifikasi lengkap
+
+#### Filter by Wilayah
+
+1. Di sidebar (desktop) atau bagian atas feed (mobile), pilih flair wilayah
+2. Pilihan: Semua, Jakut, Jaksel, Jakpus, Jaktim, Jakbar
+3. Feed akan terfilter berdasarkan lokasi yang dipilih
 
 ---
 
@@ -408,77 +462,110 @@ npm run lint
 
 ### Base URL
 
-```
-Development: http://localhost:3000/api
-Production:  https://[domain]/api
-```
+Development: http://localhost:8000/api
+
+### Authentication
+
+Semua endpoint yang dilindungi memerlukan header:
+
+Authorization: Bearer {token}
+Content-Type: application/json
+Accept: application/json
 
 ### Endpoints
 
-#### Authentication
+#### Auth
 
-```http
-POST /api/auth/register
-POST /api/auth/login
-POST /api/auth/logout
-GET  /api/auth/me
-```
+http
+POST   /api/auth/register        # Register akun baru
+POST   /api/auth/login           # Login
+POST   /api/auth/logout          # Logout (protected)
+GET    /api/auth/me              # Get current user (protected)
+POST   /api/auth/forgot-password # Kirim link reset password
+POST   /api/auth/reset-password  # Reset password
 
-#### [Resource 1]
 
-```http
-GET    /api/[resource]       # Get all
-GET    /api/[resource]/:id   # Get by ID
-POST   /api/[resource]       # Create
-PUT    /api/[resource]/:id   # Update
-DELETE /api/[resource]/:id   # Delete
-```
+#### Posts
+
+http
+GET    /api/posts                # Get all posts (with pagination, filter)
+GET    /api/posts/trending       # Get trending posts (reposts terbanyak)
+GET    /api/posts/:id            # Get single post
+POST   /api/posts                # Create post (protected)
+PUT    /api/posts/:id            # Update post (protected, owner only)
+DELETE /api/posts/:id            # Delete post (protected, owner only)
+POST   /api/posts/:id/repost     # Toggle repost (protected)
+POST   /api/posts/:id/like       # Like post (protected)
+DELETE /api/posts/:id/like       # Unlike post (protected)
+GET    /api/posts/:id/comments   # Get comments for post
+POST   /api/posts/:id/comments   # Add comment (protected)
+DELETE /api/posts/:id/comments/:id  # Delete comment (protected, owner only)
+
+
+#### Users
+
+http
+GET    /api/users/search?q=query # Search users & posts
+GET    /api/users/:id            # Get user profile
+PUT    /api/users/profile        # Update profile (protected)
+POST   /api/users/avatar         # Upload avatar (protected)
+GET    /api/users/suggested       # Get suggested users (protected)
+GET    /api/users/:id/stats       # Get user stats (posts/reposts per week)
+POST   /api/users/:id/follow      # Toggle follow (protected)
+GET    /api/users/:id/followers   # Get followers list
+GET    /api/users/:id/following   # Get following list
+
+
+#### Notifications
+
+http
+GET    /api/notifications              # Get all notifications (protected)
+GET    /api/notifications/unread-count  # Get unread count (protected)
+POST   /api/notifications/read-all      # Mark all as read (protected)
+POST   /api/notifications/:id/read      # Mark one as read (protected)
+
+
+#### Upload & Support
+
+http
+POST   /api/upload             # Upload image file (protected)
+POST   /api/support            # Send support ticket (public)
 
 ### Example Request
 
-```javascript
+javascript
 // Login
-const response = await fetch('/api/auth/login', {
+const res = await fetch('http://localhost:8000/api/auth/login', {
   method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  },
   body: JSON.stringify({
     email: 'user@example.com',
     password: 'password123'
   })
 });
-```
+const { user, token } = await res.json();
 
-📖 **[Dokumentasi API Lengkap](./docs/API.md)** _(opsional)_
-
----
-
-## 🧪 Testing
-
-### Running Tests
-
-```bash
-# Unit tests
-npm run test
-
-# Integration tests
-npm run test:integration
-
-# E2E tests
-npm run test:e2e
-
-# Test coverage
-npm run test:coverage
-```
-
-### Test Coverage
-
-```
-Statements   : XX%
-Branches     : XX%
-Functions    : XX%
-Lines        : XX%
-```
-
+// Create Post (with token)
+const postRes = await fetch('http://localhost:8000/api/posts', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify({
+    title: 'Jalan Rusak di Jaksel',
+    body: 'Jalan berlubang di depan Mall XYZ',
+    media_url: null,
+    media_type: 'text',
+    latitude: -6.2615,
+    longitude: 106.8106,
+    location_name: 'Jakarta Selatan'
+  })
+});
 ---
 
 ## 📄 Lisensi
@@ -489,7 +576,6 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE unt
 
 <div align="center">
 
-  **Made with ❤️ by [Nama Tim] for ITECHNO CUP 2026**
+*Made with ❤️ by Tim Sukses for ITECHNO CUP 2026*
 
-  
 </div>
