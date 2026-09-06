@@ -92,7 +92,7 @@
 
 ### Live Demo
 
-🔗 *[Kunjungi Website Repost](tamam.ukk-rpl.site)*
+🔗 *[Kunjungi Website Repost](https://tamam.ukk-rpl.site)*
 
 ### Screenshot Aplikasi
 
