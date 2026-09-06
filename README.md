@@ -1,4 +1,4 @@
-S<div align="center">
+<div align="center">
   
   # Repost
   ### LoremIpsum
