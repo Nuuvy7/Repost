@@ -1,4 +1,4 @@
-<div align="center">
+S<div align="center">
   
   # Repost
   ### LoremIpsum
@@ -112,7 +112,8 @@
 
 *Create Post* — Form dengan image upload, location map picker
 
-<img src="" alt="Create Post" width="800"/>
+<img src="https://github.com/user-attachments/assets/c693d10c-c6f5-4558-9959-fd449aef9b01"
+alt="Create Post" width="800"/>
 
 *Notifications* — Notifikasi real-time dengan avatar dan icon
 
