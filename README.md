@@ -100,7 +100,7 @@ S<div align="center">
 
 *Login Page* — Glassmorphism card dengan image slider
 
-<img src="https://github.com/user-attachments/assets/f05658f0-46ae-4cdf-9f70-8c950d4c97d" alt="Login" width="800"/>
+<img src="https://github.com/user-attachments/assets/dddb28c2-7c4b-4ad1-a96a-371fb363c257" alt="Login" width="800"/>
 
 *Home Feed* — Postingan dengan flair filter, trending sidebar, people you may know
 
