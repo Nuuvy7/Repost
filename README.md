@@ -104,11 +104,11 @@ S<div align="center">
 
 *Home Feed* — Postingan dengan flair filter, trending sidebar, people you may know
 
-<img src="" alt="Home" width="800"/>
+<img src="https://github.com/user-attachments/assets/aa7fddd5-2bcd-43c1-a9e4-0a4309c64644" alt="Home" width="800"/>
 
 *Profile Page* — 2-column layout dengan avatar crop, reputation chart, followers modal
 
-<img src="" alt="Profile" width="800"/>
+<img src="https://github.com/user-attachments/assets/49ed503b-bba8-4610-ae7f-fa586ef2e789" alt="Profile" width="800"/>
 
 *Create Post* — Form dengan image upload, location map picker
 
@@ -117,7 +117,7 @@ alt="Create Post" width="800"/>
 
 *Notifications* — Notifikasi real-time dengan avatar dan icon
 
-<img src="" alt="Notifications" width="800"/>
+<img src="https://github.com/user-attachments/assets/076ac8a1-c45a-482e-8559-28290a16839e" alt="Notifications" width="800"/>
 
 </div>
 
