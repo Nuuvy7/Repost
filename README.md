@@ -76,14 +76,14 @@
 
 ### Fitur Tambahan
 
-- [*Avatar Crop*] — [Upload dan crop avatar dengan react-avatar-editor (zoom, rotate, preview)]
-- [*Image Lightbox*] — [Klik foto untuk melihat dalam ukuran penuh]
-- [*People You May Know*] — [Rekomendasi follow berdasarkan mutual followers]
-- [*Search Unified*] — [Cari pengguna dan postingan dalam satu kolom pencarian]
-- [*Help & Support*] — [Form kontak yang terhubung ke email admin]
-- [*Mobile Responsive*] — [Layout horizontal scroll di mobile, FAB button untuk posting]
-- [*Session Storage*] — [Sesi per-tab independen, multi-tab login tanpa konflik]
-- [*Lava Lamp Background*] — [Efek visual animasi di berbagai halaman]
+- *Avatar Crop* — Upload dan crop avatar dengan react-avatar-editor (zoom, rotate, preview)
+- *Image Lightbox* — Klik foto untuk melihat dalam ukuran penuh
+- *People You May Know* — Rekomendasi follow berdasarkan mutual followers
+- *Search Unified* — Cari pengguna dan postingan dalam satu kolom pencarian]
+- *Help & Support* — Form kontak yang terhubung ke email admin
+- *Mobile Responsive* — Layout horizontal scroll di mobile, FAB button untuk posting
+- *Session Storage* — Sesi per-tab independen, multi-tab login tanpa konflik
+- *Lava Lamp Background* — Efek visual animasi di berbagai halaman
 
 ---
 
